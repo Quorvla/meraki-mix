@@ -219,6 +219,13 @@
 
   /* REEL EMBED */
   .reel-embed{display:flex;justify-content:center;}
+  .reel-embed video{
+    width:100%;
+    max-width:360px;
+    border-radius:10px;
+    box-shadow:0 30px 60px rgba(0,0,0,0.5);
+    background:var(--charcoal);
+  }
 
   /* SOCIAL PROOF */
   .proof{padding:90px 0;}
@@ -398,7 +405,7 @@
     <span class="eyebrow-alt">See It In Action</span>
     <h2 style="font-size:clamp(1.6rem,3vw,2.2rem);margin-bottom:40px;">A real Meraki Mix event, live.</h2>
     <div class="reel-embed">
-      <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DMokGj_sz_M/" data-instgrm-version="14" style="margin:0 auto;"></blockquote>
+      <video src="merakimix.mp4" controls preload="metadata" playsinline></video>
     </div>
   </div>
 </section>
@@ -449,6 +456,5 @@
   Meraki Mix — Luxury Beverage Services · Toronto &amp; the GTA · Website concept by <a href="#">Quorvia Marketing</a>
 </footer>
 
-<script async src="https://www.instagram.com/embed.js"></script>
 </body>
 </html>
