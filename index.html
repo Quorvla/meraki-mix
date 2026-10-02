@@ -265,6 +265,105 @@
   .contact-extra{margin-top:44px;font-size:0.92rem;opacity:0.7;}
   .contact-extra a{color:var(--gold-bright);border-bottom:1px solid rgba(205,163,73,0.3);}
 
+  /* QUOTE FORM */
+  .quote-form{max-width:820px;margin:0 auto;}
+  .form-section{
+    background:var(--charcoal);
+    border:1px solid rgba(205,163,73,0.18);
+    border-radius:8px;
+    padding:30px 32px;
+    margin-bottom:22px;
+  }
+  .form-section-title{
+    font-family:'Cinzel',serif;
+    color:var(--gold-bright);
+    font-size:1.05rem;
+    font-weight:600;
+    margin-bottom:22px;
+  }
+  .form-row{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-bottom:18px;}
+  .form-row-3{grid-template-columns:1fr 1fr 1fr;}
+  .form-row:last-child{margin-bottom:0;}
+  .field label{
+    display:block;
+    font-size:0.76rem;
+    letter-spacing:0.8px;
+    color:var(--cream);
+    opacity:0.75;
+    margin-bottom:8px;
+    text-transform:uppercase;
+  }
+  .field input, .field select{
+    width:100%;
+    background:var(--black);
+    border:1px solid rgba(205,163,73,0.25);
+    color:var(--cream);
+    padding:12px 14px;
+    border-radius:4px;
+    font-family:'Poppins',sans-serif;
+    font-size:0.95rem;
+  }
+  .field input::placeholder{color:var(--cream);opacity:0.35;}
+  .field input:focus, .field select:focus{outline:none;border-color:var(--gold);}
+  .field select{
+    appearance:none;
+    background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='6'><path d='M0 0l5 6 5-6z' fill='%23cda349'/></svg>");
+    background-repeat:no-repeat;
+    background-position:right 16px center;
+    padding-right:36px;
+  }
+
+  .product-list{display:flex;flex-direction:column;}
+  .product-row{
+    display:grid;
+    grid-template-columns:1fr auto 90px;
+    align-items:center;
+    gap:18px;
+    padding:14px 0;
+    border-bottom:1px solid rgba(205,163,73,0.12);
+  }
+  .product-row:last-child{border-bottom:none;padding-bottom:0;}
+  .product-info strong{display:block;color:var(--cream);font-size:0.95rem;margin-bottom:3px;}
+  .product-info span{font-size:0.8rem;opacity:0.65;}
+  .product-price{color:var(--gold-bright);font-size:0.88rem;font-weight:600;white-space:nowrap;}
+  .qty-input{
+    width:100%;
+    background:var(--black);
+    border:1px solid rgba(205,163,73,0.25);
+    color:var(--cream);
+    padding:10px;
+    border-radius:4px;
+    text-align:center;
+    font-size:0.95rem;
+  }
+  .qty-input:focus{outline:none;border-color:var(--gold);}
+
+  .order-total{
+    display:flex;justify-content:space-between;align-items:center;
+    margin-top:22px;
+    padding-top:18px;
+    border-top:1px solid rgba(205,163,73,0.25);
+  }
+  .order-total span{color:var(--cream);opacity:0.75;text-transform:uppercase;font-size:0.78rem;letter-spacing:1.5px;}
+  .order-total strong{color:var(--gold-bright);font-family:'Cinzel',serif;font-size:1.5rem;}
+
+  .radio-pills, .checkbox-pills{display:flex;flex-wrap:wrap;gap:14px;}
+  .radio-pill, .checkbox-pill{
+    display:flex;align-items:center;gap:10px;
+    border:1px solid rgba(205,163,73,0.3);
+    padding:14px 20px;
+    border-radius:30px;
+    font-size:0.86rem;
+    cursor:pointer;
+    flex:1;
+    min-width:230px;
+  }
+  .radio-pill:has(input:checked), .checkbox-pill:has(input:checked){
+    border-color:var(--gold);
+    background:rgba(205,163,73,0.1);
+  }
+  .radio-pill input, .checkbox-pill input{accent-color:var(--gold);width:16px;height:16px;flex-shrink:0;}
+
   footer{
     padding:30px 24px;
     text-align:center;
@@ -298,6 +397,13 @@
     .service-list li{flex-direction:column;align-items:center;gap:6px;}
     .events-note{text-align:center;}
     .quote-card{text-align:center;}
+
+    /* quote form */
+    .form-section{padding:24px 20px;}
+    .form-row, .form-row-3{grid-template-columns:1fr;}
+    .product-row{grid-template-columns:1fr;text-align:center;gap:10px;}
+    .qty-input{max-width:120px;margin:0 auto;}
+    .radio-pill, .checkbox-pill{min-width:100%;}
   }
 </style>
 </head>
@@ -310,9 +416,9 @@
       <li><a href="#about">About</a></li>
       <li><a href="#pouches">Capri Pouches</a></li>
       <li><a href="#events">Events</a></li>
-      <li><a href="#contact">Contact</a></li>
+      <li><a href="#quote">Get A Quote</a></li>
     </ul>
-    <a href="#contact" class="nav-cta">Order Now</a>
+    <a href="#quote" class="nav-cta">Order Now</a>
   </nav>
 </header>
 
@@ -325,7 +431,7 @@
       <p>Mobile bartending for elevated events, curated cocktail &amp; mocktail stations, and our signature Adult Capri Pouches — delivered right to your door.</p>
       <div class="btn-row">
         <a href="#pouches" class="btn btn-primary">Shop Capri Pouches</a>
-        <a href="#contact" class="btn btn-outline">Book Your Event</a>
+        <a href="#quote" class="btn btn-outline">Book Your Event</a>
       </div>
       <div class="rating-chip">
         <span><strong>3,100+</strong> Instagram followers</span>
@@ -429,21 +535,150 @@
   </div>
 </section>
 
+<section id="quote">
+  <div class="wrap">
+    <div class="section-head" style="margin-left:auto;margin-right:auto;text-align:center;">
+      <span class="eyebrow-alt">Request A Quote</span>
+      <h2>Tell us about your order or event.</h2>
+      <p>This is just a quote — we'll respond within 72 business hours. Please note there is a $50 minimum for delivery.</p>
+    </div>
+    <!--
+      Formspree endpoint below is a placeholder. Replace YOUR_FORM_ID with the
+      real endpoint from your Formspree account (formspree.io) to go live.
+    -->
+    <form class="quote-form" id="quoteForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+
+      <div class="form-section">
+        <h3 class="form-section-title">Your Info</h3>
+        <div class="form-row">
+          <div class="field"><label>First Name*</label><input type="text" name="first_name" required></div>
+          <div class="field"><label>Last Name*</label><input type="text" name="last_name" required></div>
+        </div>
+        <div class="form-row">
+          <div class="field"><label>Email*</label><input type="email" name="email" placeholder="example@example.com" required></div>
+          <div class="field"><label>Phone Number*</label><input type="tel" name="phone" placeholder="(000) 000-0000" required></div>
+        </div>
+      </div>
+
+      <div class="form-section">
+        <h3 class="form-section-title">Order Form</h3>
+        <div class="product-list">
+          <div class="product-row" data-price="30.00">
+            <div class="product-info"><strong>Rum Punch Classic Bottle</strong><span>1.5L Bottle · 40% alcohol</span></div>
+            <div class="product-price">$30.00 CAD</div>
+            <input type="number" class="qty-input" name="qty_rum_punch_bottle" min="0" value="0" aria-label="Rum Punch Classic Bottle quantity">
+          </div>
+          <div class="product-row" data-price="30.00">
+            <div class="product-info"><strong>Tropical Dark Rum Bottle</strong><span>Mango-Pineapple · 1.5L Bottle · 40% alcohol</span></div>
+            <div class="product-price">$30.00 CAD</div>
+            <input type="number" class="qty-input" name="qty_tropical_rum_bottle" min="0" value="0" aria-label="Tropical Dark Rum Bottle quantity">
+          </div>
+          <div class="product-row" data-price="35.00">
+            <div class="product-info"><strong>Sorrel Rum Punch Bottle</strong><span>1.5L Bottle · 40% alcohol</span></div>
+            <div class="product-price">$35.00 CAD</div>
+            <input type="number" class="qty-input" name="qty_sorrel_bottle" min="0" value="0" aria-label="Sorrel Rum Punch Bottle quantity">
+          </div>
+          <div class="product-row" data-price="30.00">
+            <div class="product-info"><strong>True Blue Sangria Bottle</strong><span>1.5L Bottle · 40% alcohol</span></div>
+            <div class="product-price">$30.00 CAD</div>
+            <input type="number" class="qty-input" name="qty_sangria_bottle" min="0" value="0" aria-label="True Blue Sangria Bottle quantity">
+          </div>
+          <div class="product-row" data-price="12.50">
+            <div class="product-info"><strong>Rum Punch Pouch</strong><span>350ml · 40% alcohol</span></div>
+            <div class="product-price">$12.50 CAD</div>
+            <input type="number" class="qty-input" name="qty_rum_punch_pouch" min="0" value="0" aria-label="Rum Punch Pouch quantity">
+          </div>
+          <div class="product-row" data-price="12.50">
+            <div class="product-info"><strong>Tropical Dark Rum Pouch</strong><span>Mango-Pineapple · 350ml · 40% alcohol</span></div>
+            <div class="product-price">$12.50 CAD</div>
+            <input type="number" class="qty-input" name="qty_tropical_rum_pouch" min="0" value="0" aria-label="Tropical Dark Rum Pouch quantity">
+          </div>
+          <div class="product-row" data-price="15.00">
+            <div class="product-info"><strong>Sorrel Pouch</strong><span>350ml · 40% alcohol</span></div>
+            <div class="product-price">$15.00 CAD</div>
+            <input type="number" class="qty-input" name="qty_sorrel_pouch" min="0" value="0" aria-label="Sorrel Pouch quantity">
+          </div>
+          <div class="product-row" data-price="12.50">
+            <div class="product-info"><strong>True Blue Sangria Pouch</strong><span>350ml · 40% alcohol</span></div>
+            <div class="product-price">$12.50 CAD</div>
+            <input type="number" class="qty-input" name="qty_sangria_pouch" min="0" value="0" aria-label="True Blue Sangria Pouch quantity">
+          </div>
+        </div>
+        <div class="order-total">
+          <span>Total</span>
+          <strong id="orderTotal">$0.00 CAD</strong>
+        </div>
+      </div>
+
+      <div class="form-section">
+        <h3 class="form-section-title">Do You Require Delivery?</h3>
+        <div class="radio-pills">
+          <label class="radio-pill"><input type="radio" name="delivery" value="Yes, deliver" required> Yes, deliver it — additional fees may apply</label>
+          <label class="radio-pill"><input type="radio" name="delivery" value="No, pickup" required> No, I'll pick up</label>
+        </div>
+      </div>
+
+      <div class="form-section">
+        <h3 class="form-section-title">Other Services</h3>
+        <div class="checkbox-pills">
+          <label class="checkbox-pill"><input type="checkbox" name="service_bartending" value="Mobile Bartending"> Mobile Bartending</label>
+          <label class="checkbox-pill"><input type="checkbox" name="service_mocktail" value="Mocktail Station"> Mocktail Station (non-alcoholic)</label>
+        </div>
+      </div>
+
+      <div class="form-section">
+        <h3 class="form-section-title">Event Details</h3>
+        <div class="form-row form-row-3">
+          <div class="field">
+            <label>Event Type</label>
+            <select name="event_type">
+              <option value="">Please Select</option>
+              <option>Birthday Party</option>
+              <option>Baby/Bridal Shower</option>
+              <option>Corporate Event</option>
+              <option>Holiday Party</option>
+              <option>Celebration of Life</option>
+            </select>
+          </div>
+          <div class="field"><label>Event Date</label><input type="date" name="event_date"></div>
+          <div class="field"><label>Number of Attendees</label><input type="number" min="0" name="attendees"></div>
+        </div>
+      </div>
+
+      <div class="form-section" id="addressSection" hidden>
+        <h3 class="form-section-title">Event / Delivery Address</h3>
+        <p style="font-size:0.82rem;opacity:0.65;margin-top:-10px;margin-bottom:18px;">Fees may apply.</p>
+        <div class="form-row">
+          <div class="field"><label>Street Address</label><input type="text" name="address1"></div>
+          <div class="field"><label>Street Address Line 2</label><input type="text" name="address2"></div>
+        </div>
+        <div class="form-row">
+          <div class="field"><label>City</label><input type="text" name="city"></div>
+          <div class="field"><label>Postal / Zip Code</label><input type="text" name="postal"></div>
+        </div>
+      </div>
+
+      <button type="submit" class="btn btn-primary" style="width:100%;border:none;cursor:pointer;">Submit Request</button>
+      <p id="formNote" style="margin-top:18px;font-size:0.88rem;opacity:0.7;text-align:center;">We'll respond within 72 business hours.</p>
+    </form>
+  </div>
+</section>
+
 <section class="contact" id="contact">
   <div class="wrap">
     <span class="eyebrow-alt">Let's Get Mixing</span>
-    <h2>Order pouches or book the bar.</h2>
-    <p>Serving Toronto &amp; the GTA. Reach out and let's plan your next celebration — or your next Friday night.</p>
+    <h2>Prefer to just say hi first?</h2>
+    <p>Serving Toronto &amp; the GTA. DM us on Instagram or send an email — whatever's easiest.</p>
     <div class="contact-cards">
       <div class="contact-card">
-        <h3>Adult Capri Pouches</h3>
-        <p>DM to order · min. 4 pouches · GTA delivery or order to-go</p>
-        <a href="https://www.instagram.com/meraki_mix/" class="btn btn-primary" target="_blank" rel="noopener">Message on Instagram</a>
+        <h3>Get An Instant Quote</h3>
+        <p>Order pouches, bottles, or book the full bar — one simple form</p>
+        <a href="#quote" class="btn btn-primary">Request A Quote</a>
       </div>
       <div class="contact-card">
-        <h3>Book Your Event</h3>
-        <p>Mobile bartending, stations &amp; full bev coordination</p>
-        <a href="https://form.jotform.com/230157945848063" class="btn btn-outline" target="_blank" rel="noopener">Fill Out Booking Form</a>
+        <h3>Prefer To DM?</h3>
+        <p>Quick questions or small orders</p>
+        <a href="https://www.instagram.com/meraki_mix/" class="btn btn-outline" target="_blank" rel="noopener">Message on Instagram</a>
       </div>
     </div>
     <div class="contact-extra">
@@ -456,5 +691,62 @@
   Meraki Mix — Luxury Beverage Services · Toronto &amp; the GTA · Website concept by <a href="#">Quorvia Marketing</a>
 </footer>
 
+<script>
+(function(){
+  var qtyInputs = document.querySelectorAll('.qty-input');
+  var totalEl = document.getElementById('orderTotal');
+  function updateTotal(){
+    var total = 0;
+    qtyInputs.forEach(function(input){
+      var price = parseFloat(input.closest('.product-row').dataset.price);
+      var qty = parseInt(input.value, 10) || 0;
+      total += price * qty;
+    });
+    totalEl.textContent = '$' + total.toFixed(2) + ' CAD';
+  }
+  qtyInputs.forEach(function(input){ input.addEventListener('input', updateTotal); });
+
+  var deliveryRadios = document.querySelectorAll('input[name="delivery"]');
+  var addressSection = document.getElementById('addressSection');
+  deliveryRadios.forEach(function(radio){
+    radio.addEventListener('change', function(){
+      addressSection.hidden = (radio.value !== 'Yes, deliver');
+    });
+  });
+
+  var form = document.getElementById('quoteForm');
+  var formNote = document.getElementById('formNote');
+  form.addEventListener('submit', async function(e){
+    e.preventDefault();
+    var submitBtn = form.querySelector('button[type="submit"]');
+    if(form.action.indexOf('YOUR_FORM_ID') !== -1){
+      formNote.textContent = 'This form isn\'t connected yet — please email Merakiguided@gmail.com directly for now.';
+      formNote.style.color = 'var(--coral)';
+      return;
+    }
+    var data = new FormData(form);
+    data.append('order_total', totalEl.textContent);
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Sending...';
+    try {
+      var res = await fetch(form.action, { method:'POST', body:data, headers:{'Accept':'application/json'} });
+      if(res.ok){
+        formNote.textContent = "Thank you! Your request has been sent — we'll be in touch within 72 business hours.";
+        formNote.style.color = 'var(--gold-bright)';
+        form.reset();
+        updateTotal();
+        addressSection.hidden = true;
+      } else {
+        throw new Error('bad response');
+      }
+    } catch(err) {
+      formNote.textContent = 'Something went wrong — please email Merakiguided@gmail.com directly.';
+      formNote.style.color = 'var(--coral)';
+    }
+    submitBtn.disabled = false;
+    submitBtn.textContent = 'Submit Request';
+  });
+})();
+</script>
 </body>
 </html>
