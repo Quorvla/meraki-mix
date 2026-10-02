@@ -542,11 +542,7 @@
       <h2>Tell us about your order or event.</h2>
       <p>This is just a quote — we'll respond within 72 business hours. Please note there is a $50 minimum for delivery.</p>
     </div>
-    <!--
-      Formspree endpoint below is a placeholder. Replace YOUR_FORM_ID with the
-      real endpoint from your Formspree account (formspree.io) to go live.
-    -->
-    <form class="quote-form" id="quoteForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+    <form class="quote-form" id="quoteForm" action="https://formspree.io/f/xyezaqqz" method="POST">
 
       <div class="form-section">
         <h3 class="form-section-title">Your Info</h3>
@@ -719,11 +715,6 @@
   form.addEventListener('submit', async function(e){
     e.preventDefault();
     var submitBtn = form.querySelector('button[type="submit"]');
-    if(form.action.indexOf('YOUR_FORM_ID') !== -1){
-      formNote.textContent = 'This form isn\'t connected yet — please email Merakiguided@gmail.com directly for now.';
-      formNote.style.color = 'var(--coral)';
-      return;
-    }
     var data = new FormData(form);
     data.append('order_total', totalEl.textContent);
     submitBtn.disabled = true;
