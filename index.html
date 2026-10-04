@@ -778,7 +778,15 @@
     e.preventDefault();
     var submitBtn = form.querySelector('button[type="submit"]');
     var data = new FormData(form);
-    data.append('order_total', totalEl.textContent);
+    qtyInputs.forEach(function(input){
+      if((parseInt(input.value, 10) || 0) <= 0){ data.delete(input.name); }
+    });
+    Array.from(data.keys()).forEach(function(key){
+      if(data.get(key) === ''){ data.delete(key); }
+    });
+    if(parseFloat(totalEl.textContent.replace(/[^0-9.]/g, '')) > 0){
+      data.append('order_total', totalEl.textContent);
+    }
     submitBtn.disabled = true;
     submitBtn.textContent = 'Sending...';
     try {
