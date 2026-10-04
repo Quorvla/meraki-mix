@@ -614,12 +614,12 @@
     </div>
     <div class="quote-grid">
       <div class="quote-card">
-        <p>"That lychee martini and pineapple mango 🔥🔥🔥. Summer in a pouch 😍."</p>
-        <cite>— @shen_unstoppable, Instagram</cite>
+        <p>"I'm so glad I was able to have you be my bartender for the entire night. You absolutely KILLED my specialty drinks, you were super quick and everyone LOVED YOU. Permanently having you as my bartender for life. Once you show me how good you are the first time, why am I going to someone else?"</p>
+        <cite>— @lickmyfashion, Instagram</cite>
       </div>
       <div class="quote-card">
-        <p>"The lychee martini one 👀"</p>
-        <cite>— @charismaggietv, Instagram</cite>
+        <p>"Meraki Mix is amazing. One bartender to such a large group serving quickly with patience and kindness! Thank you for a wonderful experience. Definitely recommending your business to others looking for your service. 🙏🏾🤎"</p>
+        <cite>— Event client, via message</cite>
       </div>
     </div>
   </div>
@@ -635,7 +635,7 @@
     <form class="quote-form" id="quoteForm" action="https://formspree.io/f/xyezaqqz" method="POST">
 
       <div class="form-section">
-        <h3 class="form-section-title">Your Info</h3>
+        <h3 class="form-section-title">Your Info &amp; Event Details</h3>
         <div class="form-row">
           <div class="field"><label>First Name*</label><input type="text" name="first_name" required></div>
           <div class="field"><label>Last Name*</label><input type="text" name="last_name" required></div>
@@ -643,6 +643,28 @@
         <div class="form-row">
           <div class="field"><label>Email*</label><input type="email" name="email" placeholder="example@example.com" required></div>
           <div class="field"><label>Phone Number*</label><input type="tel" name="phone" placeholder="(000) 000-0000" required></div>
+        </div>
+        <div class="form-row form-row-3">
+          <div class="field">
+            <label>Event Type</label>
+            <select name="event_type">
+              <option value="">Please Select</option>
+              <option>Birthday Party</option>
+              <option>Baby/Bridal Shower</option>
+              <option>Corporate Event</option>
+              <option>Holiday Party</option>
+              <option>Celebration of Life</option>
+            </select>
+          </div>
+          <div class="field"><label>Event Date</label><input type="date" name="event_date"></div>
+          <div class="field"><label>Number of Attendees</label><input type="number" min="0" name="attendees"></div>
+        </div>
+        <div class="form-row form-row-1">
+          <div class="field"><label>Event Location</label><input type="text" name="event_location" placeholder="Venue name, address, or city"></div>
+        </div>
+        <div class="form-row">
+          <div class="field"><label>Start Time</label><input type="time" name="event_start_time"></div>
+          <div class="field"><label>End Time</label><input type="time" name="event_end_time"></div>
         </div>
       </div>
 
@@ -709,32 +731,6 @@
         <div class="checkbox-pills">
           <label class="checkbox-pill"><input type="checkbox" name="service_bartending" value="Mobile Bartending"> Mobile Bartending</label>
           <label class="checkbox-pill"><input type="checkbox" name="service_mocktail" value="Mocktail Station"> Mocktail Station (non-alcoholic)</label>
-        </div>
-      </div>
-
-      <div class="form-section">
-        <h3 class="form-section-title">Event Details</h3>
-        <div class="form-row form-row-3">
-          <div class="field">
-            <label>Event Type</label>
-            <select name="event_type">
-              <option value="">Please Select</option>
-              <option>Birthday Party</option>
-              <option>Baby/Bridal Shower</option>
-              <option>Corporate Event</option>
-              <option>Holiday Party</option>
-              <option>Celebration of Life</option>
-            </select>
-          </div>
-          <div class="field"><label>Event Date</label><input type="date" name="event_date"></div>
-          <div class="field"><label>Number of Attendees</label><input type="number" min="0" name="attendees"></div>
-        </div>
-        <div class="form-row form-row-1">
-          <div class="field"><label>Event Location</label><input type="text" name="event_location" placeholder="Venue name, address, or city"></div>
-        </div>
-        <div class="form-row">
-          <div class="field"><label>Start Time</label><input type="time" name="event_start_time"></div>
-          <div class="field"><label>End Time</label><input type="time" name="event_end_time"></div>
         </div>
       </div>
 
